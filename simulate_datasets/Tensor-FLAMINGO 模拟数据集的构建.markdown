@@ -20,7 +20,11 @@ Step 5: 保存模拟数据 # N 个 GT距离矩阵+N*M个降采样加噪距离矩
 
 #### 1. FLAMIHNGO 模拟数据集的实际构建
 
-![image-20260613212432721](/Users/wuhaoliu/Library/Application Support/typora-user-images/image-20260613212432721.png)
+
+
+<img width="2882" height="1670" alt="image-20260613212432721" src="https://github.com/user-attachments/assets/5507a82d-0d3d-42f0-9982-835e5307b247" />
+
+
 
 
 

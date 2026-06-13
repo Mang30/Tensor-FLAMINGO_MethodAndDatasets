@@ -20,7 +20,9 @@ t-SVD 张量补全 (ADMM优化)
 
 
 
-![image-20260613204258608](/Users/wuhaoliu/Library/Application Support/typora-user-images/image-20260613204258608.png)
+
+<img width="1580" height="928" alt="image-20260613204258608" src="https://github.com/user-attachments/assets/04bcaab8-4df5-457c-9daa-e68c0e9906b8" />
+
 
 
 
@@ -55,16 +57,21 @@ IF[PD == 0] = 0  # 保持为观测集标记
 
 #### 1. t-SVD ADMM 在FLAMINGO模拟数据上的使用
 
-<img src="/Users/wuhaoliu/Library/Application Support/typora-user-images/image-20260613211638004.png" alt="image-20260613211638004" style="zoom:50%;" />
 
-![image-20260613211725105](/Users/wuhaoliu/Library/Application Support/typora-user-images/image-20260613211725105.png)
+<img width="2538" height="1788" alt="image-20260613211638004" src="https://github.com/user-attachments/assets/bc4c3b4c-c1a9-4507-91c9-d8d980419d16" />
+
+
+<img width="1724" height="1786" alt="image-20260613211725105" src="https://github.com/user-attachments/assets/4b20be55-808b-4a00-9272-e3d6fcfc8dea" />
+
+
 
 
 
 #### 2. t-SVD ADMM 在HiCImpute模拟数据上的使用
 
-![image-20260613210328258](/Users/wuhaoliu/Library/Application Support/typora-user-images/image-20260613210328258.png)
 
+
+<img width="3316" height="1556" alt="image-20260613210328258" src="https://github.com/user-attachments/assets/8225832b-ca36-400a-b5b5-89dc9cf12666" />
 
 
 ## 步骤 2: 张量组装脚本

@@ -5,19 +5,30 @@
 IF = PD^(-4) 
 
 PD = IF^(-0.25) 
+---
 
-1. 从距离转换为IF
+## 📊 关键代码片段
 
+### 1. 从距离转换为IF
+
+```r
 # R语言
 sparse_pd <- read.table("consensus_1_slice_1.txt")
 sparse_if <- pmax(abs(sparse_pd), 1e-10)^(-4)
+```
 
+```python
 # Python
 import numpy as np
 sparse_pd = np.loadtxt("consensus_1_slice_1.txt")
 sparse_if = np.maximum(np.abs(sparse_pd), 1e-10)**(-4)
-2. FLAMINGO重建
+```
 
+---
+
+### 2. FLAMINGO重建
+
+```r
 library(tFlamingorLite)
 
 pred <- flamingo.reconstruct_structure_worker(
@@ -32,8 +43,13 @@ pred <- flamingo.reconstruct_structure_worker(
 # 保存结果
 write.table(pred@coordinates, "predicted_coords.txt", 
             row.names=FALSE, col.names=FALSE)
-3. 质量评估
+```
 
+---
+
+### 3. 质量评估
+
+```python
 from scipy.spatial.distance import cdist
 from scipy.stats import spearmanr
 
@@ -55,12 +71,22 @@ rmsd = np.sqrt(np.mean((pred_coords - gt_coords)**2))
 
 print(f"Spearman: {spearman_corr:.4f}")
 print(f"RMSD: {rmsd:.4f}")
-✅ 成功标准（论文要求）
-指标	模拟数据	10kb分辨率
-Spearman	> 0.60	> 0.40
-RMSD	< 0.08	< 0.16
-📁 生成的文件结构
+```
 
+---
+
+## ✅ 成功标准（论文要求）
+
+| 指标 | 模拟数据 | 10kb分辨率 |
+|------|---------|-----------|
+| **Spearman** | > 0.60 | > 0.40 |
+| **RMSD** | < 0.08 | < 0.16 |
+
+---
+
+## 📁 生成的文件结构
+
+```
 simulation_pipeline_output/
 ├── simulation_input_for_tensor/
 │   ├── consensus_1_slice_1_IF.txt
@@ -74,3 +100,6 @@ simulation_pipeline_output/
 │
 └── evaluation_results/
     └── quality_metrics.json
+```
+
+---
